@@ -1,31 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Data-Centric Design</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Conall Murphy’s project portfolio, from an interactive OpenShift study workbench to machine learning projects at Queen’s University Belfast.">
+  <meta name="theme-color" content="#f6f5ee">
+  <title>Conall Murphy · Project portfolio</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">Conall Murphy</div>
-      <ul>
-        <li><a href="#work">Projects</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
-    </nav>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="wrap mast">
+    <a class="wordmark" href="./" aria-label="Conall Murphy homepage"><span class="monogram" aria-hidden="true">CM</span> Conall Murphy</a>
+    <nav aria-label="Main navigation"><a href="#projects">Projects</a><a href="#about">About</a><a href="https://github.com/ShogunCode">GitHub ↗</a></nav>
   </header>
-  <main>
-    <section class="hero">
-      <h1>Analysis through Data.</h1>
-      <p>Harnessing the power of data to drive innovation and create meaningful solutions.</p>
-      <button>Explore</button>
+  <main id="main" class="wrap">
+    <section class="intro" aria-labelledby="name">
+      <div><p class="label">Software development &amp; machine learning</p><h1 id="name">Conall Murphy<span>.</span></h1></div>
+      <p class="intro-copy">I’m a software development MSc graduate from Queen’s University Belfast. I build tools to explore data and practise the systems I’m learning.</p>
     </section>
-    <section class="description">
-      <p>Using data science and machine learning, transforming raw data into actionable insights.</p>
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="section-heading"><h2 id="projects-title">Selected projects</h2><a href="https://github.com/ShogunCode?tab=repositories">All repositories ↗</a></div>
+      <article class="feature">
+        <div class="feature-copy"><p class="label">OpenShift &amp; Linux</p>
+          <h3>OpenShift Study</h3>
+          <p>I built this workbench to practise OpenShift administration. Work through a guided lesson, troubleshoot a manifest, or mix questions across exam topics. Pick up your session later in the same browser.</p>
+          <div class="actions"><a class="button" href="/redhat-study/">Launch workbench <span aria-hidden="true">↗</span></a><a href="https://github.com/ShogunCode/redhat-study/tree/gh-pages">View source ↗</a></div>
+        </div>
+        <a class="preview" href="/redhat-study/" aria-label="Open the OpenShift Study workbench">
+          <img src="./openshift-study.png" width="1440" height="1000" alt="An OpenShift Study practice question alongside its YAML manifest">
+        </a>
+      </article>
+      <div class="project-list">
+        <article><p class="label">MSc dissertation</p><h3><a href="https://github.com/ShogunCode/mbmodel">Medulloblastoma classification <span>↗</span></a></h3><p>A Flask research application for exploring DNA methylation data and predicting tumour subtypes with a support vector machine.</p></article>
+        <article><p class="label">Geospatial analysis</p><h3><a href="https://github.com/ShogunCode/ML_Model_PSNI_Crime">Mapping PSNI crime data <span>↗</span></a></h3><p>My first machine learning project. I combined crime records with ward boundaries and population data, then mapped geographic clusters using DBSCAN.</p></article>
+        <article><p class="label">Text classification</p><h3><a href="https://github.com/ShogunCode/Email-Spam-Detector">Spam detection with Docker <span>↗</span></a></h3><p>I trained a Naive Bayes classifier on SMS messages and packaged it with Docker to learn how to run the model in a container.</p></article>
+      </div>
+    </section>
+    <section id="about" class="about" aria-labelledby="about-title">
+      <h2 id="about-title">About me</h2>
+      <div><p>Before my MSc dissertation, I used Northern Ireland crime data to teach myself clustering. For the dissertation, I applied machine learning to DNA methylation data. These days, I’m also working on OpenShift and Linux through hands-on study.</p>
+      <a href="https://www.linkedin.com/in/conall-murphy-24629a1b9/">Find me on LinkedIn ↗</a></div>
     </section>
   </main>
+  <footer class="wrap"><span>Conall Murphy</span><a href="https://github.com/ShogunCode">@ShogunCode ↗</a></footer>
 </body>
 </html>

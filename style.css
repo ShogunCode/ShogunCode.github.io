@@ -1,70 +1,71 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f7f7f7;
-    background-image: url('background.png');
-    background-size: cover;
-  }
-  
-  header {
-    padding: 20px;
-    background-color: #333;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* To vertically center align the items */
-  }
-  
-  .logo {
-    font-size: 24px;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: #fff;
-  }
-  
-  .hero {
-    padding: 100px 0;
-    color: #333;
-    text-align: center;
-  }
-  
-  .hero h1 {
-    font-size: 64px;
-  }
-  
-  .hero p {
-    font-size: 24px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  .description {
-    background-color: #333;
-    color: #fff;
-    padding: 40px;
-    text-align: center;
-  }
-  
-  
+:root {
+  --paper: #f6f5ee;
+  --ink: #182b26;
+  --accent: #286449;
+  --rule: #b5bdb1;
+  color-scheme: light;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+.wrap { width: min(1200px, 89%); margin-inline: auto; }
+a { color: inherit; text-underline-offset: .22em; }
+a:hover { color: var(--accent); }
+a:focus-visible { outline: 3px solid #c86428; outline-offset: 4px; }
+.skip { position: absolute; left: 1rem; top: -5rem; padding: .7rem; background: white; }
+.skip:focus { top: .5rem; z-index: 2; }
+.mast, nav, .wordmark, .section-heading, footer, .actions { display: flex; align-items: center; }
+.mast, .section-heading, footer { justify-content: space-between; }
+.mast { padding-block: 22px; border-bottom: 1px solid var(--rule); }
+.wordmark, nav a { text-decoration: none; }
+.wordmark { gap: 12px; font-weight: 650; }
+.monogram { display: grid; place-items: center; width: 38px; height: 38px; background: var(--ink); color: var(--paper); border-radius: 50%; font: italic bold 15px Georgia, serif; letter-spacing: -2px; padding-right: 2px; }
+nav { gap: clamp(12px, 3vw, 36px); }
+nav a, .section-heading a, .actions a, .about a, footer { font-size: .9rem; }
+.intro { display: grid; grid-template-columns: 1.55fr 1fr; align-items: end; gap: 5%; padding-block: clamp(60px, 8vw, 112px); }
+.label { margin: 0; font: 600 .73rem/1.5 "IBM Plex Mono", Consolas, monospace; letter-spacing: .09em; text-transform: uppercase; color: var(--accent); }
+h1, h2, h3 { font-family: "Baskervville", Georgia, serif; font-weight: 400; margin: 0; }
+h1 { font-size: clamp(3.5rem, 6.9vw, 6.8rem); line-height: 1; letter-spacing: -.065em; margin-top: 18px; }
+h1 span { color: var(--accent); }
+.intro-copy { margin: 0; max-width: 37ch; font-size: clamp(1.05rem,1.45vw,1.3rem); line-height: 1.55; }
+.section-heading { padding-block: 19px; border-top: 1px solid var(--ink); gap: 12px; }
+h2 { font-size: 2rem; letter-spacing: -.04em; }
+.feature { display: grid; grid-template-columns: 1fr 1.2fr; overflow: hidden; background: #e7eddf; border: 1px solid #c7d3bf; }
+.feature-copy { padding: clamp(24px,4vw,57px); align-self: center; }
+.feature-copy h3 { margin: 20px 0 12px; font-size: clamp(2.5rem,4vw,4rem); line-height: 1; letter-spacing: -.055em; }
+.feature-copy > p:not(.label), .project-list article > p:last-child, .about p { line-height: 1.65; }
+.feature-copy > p:not(.label) { max-width: 41ch; }
+.actions { gap: 19px; margin-top: 25px; flex-wrap: wrap; }
+.button { display: inline-flex; gap: 16px; padding: 12px 17px; background: var(--ink); color: white; text-decoration: none; }
+.button:hover { background: var(--accent); color: white; }
+.preview { background-color: #233f35; background-image: radial-gradient(#577062 1px, transparent 1px); background-size: 12px 12px; display: grid; align-items: center; padding: clamp(18px,3vw,46px); }
+.preview img { width: 100%; height: auto; display: block; box-shadow: 0 10px 28px #10271e80; border: 1px solid #53675b; }
+.project-list { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(20px,3vw,44px); margin: 40px 0 54px; }
+.project-list article { border-top: 1px solid var(--rule); padding-top: 17px; }
+.project-list h3 { font-size: clamp(1.65rem,2.3vw,2.1rem); line-height: 1.12; letter-spacing: -.035em; margin-top: 14px; }
+.project-list h3 a { text-decoration: none; }
+.project-list h3 a:hover { text-decoration: underline; }
+.project-list h3 span { font: 1rem "Segoe UI", sans-serif; color: var(--accent); }
+.about { display: grid; grid-template-columns: 1fr 2fr; gap: 20px; border-top: 1px solid var(--ink); padding-block: 36px 58px; }
+.about p { max-width: 62ch; margin: 0 0 16px; }
+footer { padding-block: 20px 30px; border-top: 1px solid var(--rule); }
+@media (max-width: 760px) {
+  .intro, .feature, .about, .project-list { grid-template-columns: 1fr; }
+  .intro { gap: 22px; padding-block: 52px; }
+  .intro-copy { max-width: 48ch; }
+  .feature-copy { padding: 28px; }
+  .preview { padding: 24px; }
+  .project-list { gap: 20px; margin-block: 28px; }
+  .project-list article p:last-child { margin-bottom: 0; }
+}
+@media (max-width: 430px) {
+  .wrap { width: 91%; }
+  .mast { flex-wrap: wrap; gap: 12px; }
+  .wordmark { gap: 7px; font-size: .87rem; }
+  nav { gap: 10px; }
+  nav a, .section-heading a { font-size: .8rem; }
+  .monogram { width: 29px; height: 29px; }
+  h2 { font-size: 1.65rem; }
+}

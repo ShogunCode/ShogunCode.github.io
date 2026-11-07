@@ -3,21 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Conall Murphy’s project portfolio, from an interactive OpenShift study workbench to machine learning projects at Queen’s University Belfast.">
+  <meta name="description" content="Conall Murphy is a Belfast-based platform engineer working with OpenShift and Red Hat Enterprise Linux. Explore his platform work, certifications and projects.">
   <meta name="theme-color" content="#f6f5ee">
-  <title>Conall Murphy · Project portfolio</title>
+  <title>Conall Murphy · Platform Engineer</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="wrap mast">
     <a class="wordmark" href="./" aria-label="Conall Murphy homepage"><span class="monogram" aria-hidden="true">CM</span> Conall Murphy</a>
-    <nav aria-label="Main navigation"><a href="#projects">Projects</a><a href="#about">About</a><a href="https://github.com/ShogunCode">GitHub ↗</a></nav>
+    <nav aria-label="Main navigation"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#certifications">Certifications</a><a href="https://github.com/ShogunCode">GitHub ↗</a></nav>
   </header>
   <main id="main" class="wrap">
     <section class="intro" aria-labelledby="name">
-      <div><p class="label">Software development &amp; machine learning</p><h1 id="name">Conall Murphy<span>.</span></h1></div>
-      <p class="intro-copy">I’m a software development MSc graduate from Queen’s University Belfast. I build tools to explore data and practise the systems I’m learning.</p>
+      <div><p class="label">Platform Engineer · DevOps · Belfast</p><h1 id="name">Conall Murphy<span>.</span></h1></div>
+      <p class="intro-copy">I work on OpenShift and Red Hat Enterprise Linux at Version 1. I help teams deploy containerised services, trace failures from an alert to a workload, and keep releases repeatable.</p>
+    </section>
+    <section id="certifications" aria-labelledby="cert-title">
+      <div class="section-heading"><h2 id="cert-title">Certifications</h2></div>
+      <ul class="credentials">
+        <li><span class="label">EX280</span><strong>Red Hat Certified Specialist in OpenShift Administration</strong><time datetime="2026-06">June 2026</time></li>
+        <li><span class="label">EX188</span><strong>Red Hat Certified Specialist in Containers</strong><time datetime="2025-12">December 2025</time></li>
+        <li><span class="label">EX200 · RHCSA</span><strong>Red Hat Certified System Administrator</strong><time datetime="2025-08">August 2025</time></li>
+        <li><span class="label">AZ-900</span><strong>Microsoft Certified: Azure Fundamentals</strong><time datetime="2025-02">February 2025</time></li>
+      </ul>
     </section>
     <section id="projects" aria-labelledby="projects-title">
       <div class="section-heading"><h2 id="projects-title">Selected projects</h2><a href="https://github.com/ShogunCode?tab=repositories">All repositories ↗</a></div>
@@ -32,15 +41,23 @@
         </a>
       </article>
       <div class="project-list">
-        <article><p class="label">MSc dissertation</p><h3><a href="https://github.com/ShogunCode/mbmodel">Medulloblastoma classification <span>↗</span></a></h3><p>A Flask research application for exploring DNA methylation data and predicting tumour subtypes with a support vector machine.</p></article>
-        <article><p class="label">Geospatial analysis</p><h3><a href="https://github.com/ShogunCode/ML_Model_PSNI_Crime">Mapping PSNI crime data <span>↗</span></a></h3><p>My first machine learning project. I combined crime records with ward boundaries and population data, then mapped geographic clusters using DBSCAN.</p></article>
-        <article><p class="label">Text classification</p><h3><a href="https://github.com/ShogunCode/Email-Spam-Detector">Spam detection with Docker <span>↗</span></a></h3><p>I trained a Naive Bayes classifier on SMS messages and packaged it with Docker to learn how to run the model in a container.</p></article>
+        <article><p class="label">Mapping application</p><h3><a href="https://github.com/ShogunCode/ML_Model_PSNI_Crime">Northern Ireland crime map <span>↗</span></a></h3>
+          <p>Where are reported crimes concentrated, and how has that changed over time? I built an application for exploring PSNI street-level records by electoral ward. You can search for a ward, inspect its monthly counts, and compare trends by crime type.</p>
+          <p>A Python pipeline joins the records to ward boundaries and population data, then writes the results to PostgreSQL with PostGIS. A FastAPI service supplies the React interface with ward summaries and time series.</p>
+          <a href="https://github.com/ShogunCode/ML_Model_PSNI_Crime/blob/main/db/README.md">Database guide ↗</a></article>
+        <article><p class="label">Application delivery</p><h3>HELD booking platform</h3>
+          <p>I built a booking system for HELD Lymphatic Studio. Customers can reserve appointments and pay a deposit. Time-limited holds and database checks keep two customers from booking the same slot.</p>
+          <p>The React frontend runs on Cloudflare Pages. A containerised Node.js API runs on Railway with PostgreSQL. I use GitHub Actions to run database integration tests and Playwright booking tests before release.</p>
+          <a href="https://heldlymphaticstudio.com">Visit HELD ↗</a></article>
       </div>
     </section>
-    <section id="about" class="about" aria-labelledby="about-title">
-      <h2 id="about-title">About me</h2>
-      <div><p>Before my MSc dissertation, I used Northern Ireland crime data to teach myself clustering. For the dissertation, I applied machine learning to DNA methylation data. These days, I’m also working on OpenShift and Linux through hands-on study.</p>
-      <a href="https://www.linkedin.com/in/conall-murphy-24629a1b9/">Find me on LinkedIn ↗</a></div>
+    <section id="experience" class="about" aria-labelledby="experience-title">
+      <div><p class="label">Version 1 · January 2025–present</p><h2 id="experience-title">Platform engineering</h2></div>
+      <div><p>I support containerised services for public-sector transport teams in the UK and Ireland. My work spans OpenShift 4, Kubernetes workloads, RHEL troubleshooting and controlled releases.</p>
+        <h3>Workload migration</h3><p>I migrated legacy OpenShift DeploymentConfigs to Kubernetes Deployments, preserving ImageStream-triggered releases and adding readiness and liveness probes. I check routes, storage, permissions and health checks before changes move between environments.</p>
+        <h3>Incident response and automation</h3><p>I built and tested a Python integration that links OpenShift alerts to ServiceNow. A stable correlation key lets recurring errors match an existing incident, even when the log message changes. I also used Bash diagnostics and load tests to tune Loki ingestion and check that alerts arrived reliably.</p>
+        <h3>Education and current study</h3><p>I hold an MSc in Software Development from Queen’s University Belfast. I’m preparing for EX380 through hands-on work with OpenShift backup and recovery, GitOps, scheduling and cluster logging.</p>
+        <a href="https://www.linkedin.com/in/conall-murphy-24629a1b9/">Find me on LinkedIn ↗</a></div>
     </section>
   </main>
   <footer class="wrap"><span>Conall Murphy</span><a href="https://github.com/ShogunCode">@ShogunCode ↗</a></footer>
